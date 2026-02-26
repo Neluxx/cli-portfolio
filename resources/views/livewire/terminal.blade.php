@@ -1,7 +1,6 @@
 <?php ?>
 <div
-    class="p-4 font-mono text-sm text-[#d4d4d4]"
-    style="font-family: 'JetBrains Mono', monospace;"
+    class="font-ubuntu-mono p-4 text-sm bg-ubuntu-bg text-ubuntu-fg min-h-[80vh]"
     x-data="terminalHandler()"
     x-init="init()"
     @scroll-to-bottom.window="scrollToBottom()"
@@ -11,14 +10,14 @@
     <div id="terminal-output" class="space-y-1">
         @foreach ($history as $entry)
             @if ($entry['type'] === 'input')
-                <div class="flex items-start gap-2">
+                <div class="flex items-start gap-1 flex-wrap">
                     <span class="prompt shrink-0">
-                        <span class="text-[#27c93f]">portfolio</span><span class="text-[#6b6b6b]">@</span><span class="text-[#5ec1f0]">ubuntu</span><span class="text-[#6b6b6b]">:</span><span class="text-[#c792ea]">~</span><span class="text-[#6b6b6b]">$</span>
+                        <span class="text-ubuntu-green font-bold">portfolio@ubuntu</span><span class="text-ubuntu-fg font-bold">:</span><span class="text-ubuntu-blue font-bold">~</span><span class="text-ubuntu-fg font-bold">$</span>
                     </span>
-                    <span class="text-white break-all">{{ $entry['content'] }}</span>
+                    <span class="text-ubuntu-white break-all ml-1">{{ $entry['content'] }}</span>
                 </div>
             @else
-                <div class="terminal-output-block pl-0 py-1 leading-relaxed">
+                <div class="terminal-output-block pl-0 py-1 leading-relaxed text-ubuntu-fg">
                     {!! $entry['content'] !!}
                 </div>
             @endif
@@ -26,15 +25,15 @@
     </div>
 
     {{-- Live input line --}}
-    <div class="flex items-center gap-2 mt-2">
+    <div class="flex items-center gap-1 mt-2 flex-wrap">
         <span class="prompt shrink-0">
-            <span class="text-[#27c93f]">portfolio</span><span class="text-[#6b6b6b]">@</span><span class="text-[#5ec1f0]">ubuntu</span><span class="text-[#6b6b6b]">:</span><span class="text-[#c792ea]">~</span><span class="text-[#6b6b6b]">$</span>
+            <span class="text-ubuntu-green font-bold">portfolio@ubuntu</span><span class="text-ubuntu-fg font-bold">:</span><span class="text-ubuntu-blue font-bold">~</span><span class="text-ubuntu-fg font-bold">$</span>
         </span>
         <input
             x-ref="input"
             wire:model="input"
             type="text"
-            class="flex-1 bg-transparent outline-none text-white caret-[#27c93f] placeholder-[#4a4a4a]"
+            class="flex-1 bg-transparent outline-none break-all ml-1 text-ubuntu-white caret-ubuntu-white"
             placeholder="type a command… (try 'help')"
             autocomplete="off"
             autocorrect="off"
@@ -72,4 +71,3 @@
         if (input) input.focus();
     });
 </script>
-
