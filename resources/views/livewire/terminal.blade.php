@@ -45,8 +45,6 @@
             @keydown.arrow-down.prevent="$wire.navigateHistory('down')"
             @keydown.ctrl.l.prevent="$wire.clear()"
         />
-        {{-- Blinking cursor block --}}
-        <span class="w-2 h-4 bg-[#27c93f] animate-pulse opacity-80"></span>
     </div>
 </div>
 
