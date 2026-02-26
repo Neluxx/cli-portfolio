@@ -13,7 +13,7 @@
 </head>
 <body class="bg-[#1a1a1a] min-h-screen flex items-start justify-center p-4 md:p-8">
 
-<div class="w-full max-w-5xl">
+<div class="w-full max-w-7xl">
     {{-- Window chrome --}}
     <div class="bg-[#2d2d2d] rounded-t-lg px-4 py-3 flex items-center gap-2 border-b border-[#3a3a3a]">
         <span class="w-3 h-3 rounded-full bg-[#ff5f56] hover:brightness-110 cursor-pointer transition-all"></span>
