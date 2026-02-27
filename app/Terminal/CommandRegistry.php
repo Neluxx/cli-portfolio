@@ -6,7 +6,7 @@ use App\Terminal\Commands\AboutCommand;
 use App\Terminal\Commands\ClearCommand;
 use App\Terminal\Commands\EducationCommand;
 use App\Terminal\Commands\HelpCommand;
-use App\Terminal\Commands\JobsCommand;
+use App\Terminal\Commands\ExperienceCommand;
 use App\Terminal\Commands\ProjectsCommand;
 use App\Terminal\Commands\SkillsCommand;
 use App\Terminal\Commands\SocialsCommand;
@@ -27,7 +27,7 @@ class CommandRegistry
             EducationCommand::class,
             SocialsCommand::class,
             ProjectsCommand::class,
-            JobsCommand::class,
+            ExperienceCommand::class,
             WelcomeCommand::class,
         ]);
     }
