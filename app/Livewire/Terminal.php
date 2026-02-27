@@ -23,7 +23,7 @@ class Terminal extends Component
     {
         $this->history[] = [
             'type'    => 'output',
-            'content' => view('terminal.welcome')->render(),
+            'content' => view('terminal.responses.welcome')->render(),
         ];
     }
 

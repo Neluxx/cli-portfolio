@@ -9,6 +9,6 @@ class WelcomeCommand extends AbstractCommand
 
     public function execute(string $args = ''): string
     {
-        return $this->view('terminal.welcome');
+        return $this->view('terminal.responses.welcome');
     }
 }
