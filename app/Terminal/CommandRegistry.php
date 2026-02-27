@@ -3,6 +3,7 @@
 namespace App\Terminal;
 
 use App\Terminal\Commands\AboutCommand;
+use App\Terminal\Commands\ClearCommand;
 use App\Terminal\Commands\EducationCommand;
 use App\Terminal\Commands\HelpCommand;
 use App\Terminal\Commands\JobsCommand;
@@ -20,6 +21,7 @@ class CommandRegistry
         $this->register([
             HelpCommand::class,
             AboutCommand::class,
+            ClearCommand::class,
             SkillsCommand::class,
             EducationCommand::class,
             SocialsCommand::class,
