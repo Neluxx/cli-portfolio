@@ -5,7 +5,7 @@ namespace App\Terminal\Commands;
 class ExperienceCommand extends AbstractCommand
 {
     public function getName(): string { return 'experience'; }
-    public function getDescription(): string { return 'View my work experience'; }
+    public function getDescription(): string { return "Where I've worked"; }
 
     public function execute(string $args = ''): string
     {
