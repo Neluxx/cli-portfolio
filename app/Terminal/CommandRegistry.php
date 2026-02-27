@@ -2,8 +2,13 @@
 
 namespace App\Terminal;
 
-use App\Terminal\Commands\HelloWorldCommand;
+use App\Terminal\Commands\AboutCommand;
+use App\Terminal\Commands\EducationCommand;
 use App\Terminal\Commands\HelpCommand;
+use App\Terminal\Commands\JobsCommand;
+use App\Terminal\Commands\ProjectsCommand;
+use App\Terminal\Commands\SkillsCommand;
+use App\Terminal\Commands\SocialsCommand;
 use Throwable;
 
 class CommandRegistry
@@ -14,7 +19,12 @@ class CommandRegistry
     {
         $this->register([
             HelpCommand::class,
-            HelloWorldCommand::class,
+            AboutCommand::class,
+            SkillsCommand::class,
+            EducationCommand::class,
+            SocialsCommand::class,
+            ProjectsCommand::class,
+            JobsCommand::class,
         ]);
     }
 
