@@ -10,6 +10,7 @@ use App\Terminal\Commands\JobsCommand;
 use App\Terminal\Commands\ProjectsCommand;
 use App\Terminal\Commands\SkillsCommand;
 use App\Terminal\Commands\SocialsCommand;
+use App\Terminal\Commands\WelcomeCommand;
 use Throwable;
 
 class CommandRegistry
@@ -27,6 +28,7 @@ class CommandRegistry
             SocialsCommand::class,
             ProjectsCommand::class,
             JobsCommand::class,
+            WelcomeCommand::class,
         ]);
     }
 
