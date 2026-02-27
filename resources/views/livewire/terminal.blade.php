@@ -1,13 +1,14 @@
 <?php ?>
 <div
-    class="font-ubuntu-mono p-4 text-sm bg-ubuntu-bg text-ubuntu-fg min-h-[80vh]"
+    class="font-ubuntu-mono p-4 text-sm bg-ubuntu-bg text-ubuntu-fg h-full overflow-y-auto"
+    id="terminal-output"
     x-data="terminalHandler()"
     x-init="init()"
     @scroll-to-bottom.window="scrollToBottom()"
     @focus-input.window="$nextTick(() => $refs.input.focus())"
 >
     {{-- Output history --}}
-    <div id="terminal-output" class="space-y-1">
+    <div class="space-y-1">
         @foreach ($history as $entry)
             @if ($entry['type'] === 'input')
                 <div class="flex items-start gap-1 flex-wrap">
@@ -59,7 +60,7 @@
             scrollToBottom() {
                 this.$nextTick(() => {
                     const el = document.getElementById('terminal-output');
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    if (el) el.scrollTop = el.scrollHeight;
                 });
             }
         }

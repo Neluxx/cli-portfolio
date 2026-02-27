@@ -22,7 +22,7 @@
     </div>
 
     {{-- Terminal body --}}
-    <div class="bg-ubuntu-bg rounded-b-lg min-h-[80vh] border border-chrome-bg border-t-0">
+    <div class="bg-ubuntu-bg rounded-b-lg h-[85vh] border border-chrome-bg border-t-0 overflow-hidden">
         {{ $slot }}
     </div>
 </div>
