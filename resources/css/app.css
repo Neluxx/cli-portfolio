@@ -11,23 +11,20 @@
     --font-ubuntu-mono: 'Ubuntu Mono', 'Courier New', monospace;
 
     /* Ubuntu Terminal Colors */
-    --color-ubuntu-bg:       #300a24;
-    --color-ubuntu-fg:       #d3d7cf;
-    --color-ubuntu-white:    #eeeeec;
-    --color-ubuntu-green:    #4e9a06;
-    --color-ubuntu-green-lt: #8ae234;
-    --color-ubuntu-blue:     #729fcf;
-    --color-ubuntu-cyan:     #34e2e2;
-    --color-ubuntu-yellow:   #fce94f;
-    --color-ubuntu-red:      #ef2929;
-    --color-ubuntu-purple:   #ad7fa8;
-    --color-ubuntu-gray:     #555753;
+    --color-ubuntu-bg:       #300924; /* Terminal background */
+    --color-ubuntu-white:    #eeeeec; /* Default text color */
+    --color-ubuntu-green:    #8ae234; /* username@hostname */
+    --color-ubuntu-cyan:     #34e2e2; /* Commands */
+    --color-ubuntu-blue:     #729fcf; /* Links */
+    --color-ubuntu-yellow:   #fce94f; /* Title */
+    --color-ubuntu-red:      #ef2929; /* Error */
+    --color-ubuntu-purple:   #ad7fa8; /* Notes */
 
     /* Window chrome colors */
-    --color-chrome-bg:     #2d2d2d;
-    --color-chrome-border: #3a3a3a;
-    --color-chrome-body:   #1a1a1a;
-    --color-dot-red:       #ff5f56;
-    --color-dot-yellow:    #ffbd2e;
-    --color-dot-green:     #27c93f;
+    --color-chrome-bg:     #2d2d2d; /* Window background */
+    --color-chrome-border: #3a3a3a; /* Window border */
+    --color-chrome-body:   #1a1a1a; /* Background */
+    --color-dot-red:       #ff5f56; /* Close */
+    --color-dot-yellow:    #ffbd2e; /* Minimize */
+    --color-dot-green:     #27c93f; /* Fullscreen */
 }
