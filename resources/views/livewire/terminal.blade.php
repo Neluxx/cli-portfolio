@@ -8,12 +8,12 @@
     @focus-input.window="$nextTick(() => $refs.input.focus())"
 >
     {{-- Output history --}}
-    <div class="space-y-1">
+    <div class="space-y-2">
         @foreach ($history as $entry)
             @if ($entry['type'] === 'input')
                 <div class="flex items-start gap-1 flex-wrap">
                     <span class="prompt shrink-0">
-                        <span class="text-ubuntu-green font-bold">portfolio@ubuntu</span><span class="text-ubuntu-white font-bold">:</span><span class="text-ubuntu-blue font-bold">~</span><span class="text-ubuntu-white font-bold">$</span>
+                        <span class="text-ubuntu-green font-bold">neluxx@portfolio</span><span class="text-ubuntu-white font-bold">:</span><span class="text-ubuntu-blue font-bold">~</span><span class="text-ubuntu-white font-bold">$</span>
                     </span>
                     <span class="text-ubuntu-white break-all ml-1">{{ $entry['content'] }}</span>
                 </div>
@@ -28,7 +28,7 @@
     {{-- Live input line --}}
     <div class="flex items-center gap-1 mt-2 flex-wrap">
         <span class="prompt shrink-0">
-            <span class="text-ubuntu-green font-bold">portfolio@ubuntu</span><span class="text-ubuntu-white font-bold">:</span><span class="text-ubuntu-blue font-bold">~</span><span class="text-ubuntu-white font-bold">$</span>
+            <span class="text-ubuntu-green font-bold">neluxx@portfolio</span><span class="text-ubuntu-white font-bold">:</span><span class="text-ubuntu-blue font-bold">~</span><span class="text-ubuntu-white font-bold">$</span>
         </span>
         <input
             x-ref="input"
