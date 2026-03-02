@@ -1,5 +1,6 @@
 <div class="space-y-4">
     <p class="text-ubuntu-yellow font-bold mb-2">Education</p>
+
     <div>
         <p class="text-ubuntu-green font-bold">B.Sc. Media Informatics</p>
         <p class="text-ubuntu-purple text-xs">Furtwangen University · Sep 2017 – Mar 2021</p>
