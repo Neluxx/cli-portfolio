@@ -1,0 +1,33 @@
+# Local environment config
+.env
+.env.*
+!.env.example
+
+# Dependencies
+vendor/
+node_modules/
+
+# Compiled front-end assets
+public/build/
+public/hot/
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Docker files
+docker/
+compose*.yaml
+.dockerignore
+
+# Dev/test tooling
+phpunit.xml
+.phpunit*
+tests/
+
+# IDE and OS config
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
