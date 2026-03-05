@@ -7,6 +7,7 @@ use App\Terminal\Commands\ClearCommand;
 use App\Terminal\Commands\EducationCommand;
 use App\Terminal\Commands\HelpCommand;
 use App\Terminal\Commands\ExperienceCommand;
+use App\Terminal\Commands\LanguageCommand;
 use App\Terminal\Commands\ProjectsCommand;
 use App\Terminal\Commands\SkillsCommand;
 use App\Terminal\Commands\SocialsCommand;
@@ -29,6 +30,7 @@ class CommandRegistry
             ProjectsCommand::class,
             ExperienceCommand::class,
             WelcomeCommand::class,
+            LanguageCommand::class,
         ]);
     }
 
