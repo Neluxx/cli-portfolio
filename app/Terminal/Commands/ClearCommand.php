@@ -11,7 +11,7 @@ class ClearCommand extends AbstractCommand
 
     public function getDescription(): string
     {
-        return 'Clear the terminal';
+        return __('terminal.cmd_clear');
     }
 
     public function execute(string $args = ''): string

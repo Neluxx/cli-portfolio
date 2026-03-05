@@ -7,7 +7,9 @@ use Throwable;
 abstract class AbstractCommand
 {
     abstract public function getName(): string;
+
     abstract public function getDescription(): string;
+
     abstract public function execute(string $args = ''): string;
 
     protected function view(string $template, array $data = []): string

@@ -4,8 +4,15 @@ namespace App\Terminal\Commands;
 
 class HelpCommand extends AbstractCommand
 {
-    public function getName(): string { return 'help'; }
-    public function getDescription(): string { return 'Not sure where to start?'; }
+    public function getName(): string
+    {
+        return 'help';
+    }
+
+    public function getDescription(): string
+    {
+        return __('terminal.cmd_help');
+    }
 
     public function execute(string $args = ''): string
     {
