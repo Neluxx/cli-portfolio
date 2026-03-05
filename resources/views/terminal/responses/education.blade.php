@@ -1,20 +1,17 @@
 <div class="space-y-4">
-    <p class="text-ubuntu-yellow font-bold mb-2">Education</p>
-
+    <p class="text-ubuntu-yellow font-bold mb-2">{{ __('terminal.education_title') }}</p>
     <div>
-        <p class="text-ubuntu-green font-bold">B.Sc. Media Informatics</p>
-        <p class="text-ubuntu-purple text-xs">Furtwangen University · Sep 2017 – Mar 2021</p>
-        <p class="text-ubuntu-green">Bachelor's Thesis:</p>
+        <p class="text-ubuntu-green font-bold">{{ __('terminal.education_degree') }}</p>
+        <p class="text-ubuntu-purple text-xs">{{ __('terminal.education_university') }}</p>
+        <p class="text-ubuntu-green">{{ __('terminal.education_thesis_label') }}</p>
         <ul class="list-disc list-inside ml-2 space-y-0">
-            <li>Development of a web-based preprocessing application for machine learning workflows</li>
+            <li>{{ __('terminal.education_thesis_item') }}</li>
         </ul>
-        <p class="text-ubuntu-green">Academic Engagement:</p>
+        <p class="text-ubuntu-green">{{ __('terminal.education_engagement_label') }}</p>
         <ul class="list-disc list-inside ml-2 space-y-0">
-            <li>Semester Representative</li>
-            <li>Student Council Assistant</li>
-            <li>Student Representative of the Media Informatics Study Commission</li>
-            <li>Participant HFU Excellence Coaching Program</li>
-            <li>Tutor for Mathematics and Physics</li>
+            @foreach(__('terminal.education_engagement_items') as $item)
+                <li>{{ $item }}</li>
+            @endforeach
         </ul>
     </div>
 </div>

@@ -8,9 +8,9 @@
  ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝
     </pre>
     <div>
-        <p class="text-ubuntu-purple text-xs">Ubuntu 24.04 LTS — Laravel 12 / Livewire 4</p>
-        <p class="mt-2 text-ubuntu-white">Welcome to my interactive portfolio</p>
-        <p class="text-ubuntu-purple">Type <span class="text-ubuntu-yellow">help</span> to see all available commands</p>
+        <p class="text-ubuntu-purple text-xs">{!! __('terminal.welcome_subtitle') !!}</p>
+        <p class="mt-2 text-ubuntu-white">{!! __('terminal.welcome_message') !!}</p>
+        <p class="text-ubuntu-purple">{!! __('terminal.welcome_hint') !!}</p>
     </div>
     <div class="border-t border-ubuntu-purple"></div>
 </div>
