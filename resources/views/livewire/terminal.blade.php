@@ -44,6 +44,7 @@
             @keydown.arrow-up.prevent="$wire.navigateHistory('up')"
             @keydown.arrow-down.prevent="$wire.navigateHistory('down')"
             @keydown.ctrl.l.prevent="$wire.clear()"
+            @keydown.tab.prevent="$wire.autocomplete()"
         />
     </div>
 </div>

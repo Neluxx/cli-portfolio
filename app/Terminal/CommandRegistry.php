@@ -56,4 +56,9 @@ class CommandRegistry
             return "<span class='text-[#ff5f56]'>Error: {$e->getMessage()}</span>";
         }
     }
+
+    public function getCommandNames(): array
+    {
+        return array_keys($this->commands);
+    }
 }

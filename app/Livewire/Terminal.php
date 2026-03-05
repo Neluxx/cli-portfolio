@@ -79,6 +79,22 @@ class Terminal extends Component
             : '';
     }
 
+    public function autocomplete(): void
+    {
+        $input = trim($this->input);
+
+        if (empty($input)) {
+            return;
+        }
+
+        $names = $this->registry->getCommandNames();
+        $matches = array_values(array_filter($names, fn($name) => str_starts_with($name, $input)));
+
+        if (count($matches) === 1) {
+            $this->input = $matches[0];
+        }
+    }
+
     public function clear(): void
     {
         $this->history = [];
