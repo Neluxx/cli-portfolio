@@ -16,12 +16,16 @@ class LanguageCommand extends AbstractCommand
 
     public function execute(string $args = ''): string
     {
-        $current = session('locale', config('app.locale', 'en'));
-        $next = $current === 'en' ? 'de' : 'en';
+        $available = ['en', 'de'];
+        $lang = strtolower(trim($args));
 
-        session(['locale' => $next]);
-        app()->setLocale($next);
+        if (!in_array($lang, $available)) {
+            return "<span class='text-red-400'>" . __('terminal.lang_not_available', ['locale' => $lang ?: '?', 'available' => implode(', ', $available)]) . "</span>";
+        }
 
-        return "<span class='text-ubuntu-green'>" . __('terminal.lang_toggled', ['locale' => strtoupper($next)]) . "</span>";
+        session(['locale' => $lang]);
+        app()->setLocale($lang);
+
+        return "<span class='text-ubuntu-green'>" . __('terminal.lang_toggled', ['locale' => strtoupper($lang)]) . "</span>";
     }
 }

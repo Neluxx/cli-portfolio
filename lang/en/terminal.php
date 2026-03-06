@@ -15,7 +15,8 @@ return [
     'available_commands' => 'Available commands:',
 
     // Lang command
-    'lang_toggled' => 'Language switched to: <span class="text-ubuntu-yellow">:locale</span>',
+    'lang_toggled'       => 'Language switched to: <span class="text-ubuntu-yellow">:locale</span>',
+    'lang_not_available' => 'Language "<span class="text-ubuntu-yellow">:locale</span>" is not available. Available languages: :available',
 
     // Command descriptions
     'cmd_help'       => 'Not sure where to start?',
@@ -26,7 +27,7 @@ return [
     'cmd_socials'    => 'Find me online',
     'cmd_projects'   => 'Projects I have worked on',
     'cmd_experience' => 'My work experience',
-    'cmd_lang'       => 'Toggle language (en/de)',
+    'cmd_lang'       => 'Switch language (e.g. lang en)',
 
     // About
     'about_title'  => 'About Me',
