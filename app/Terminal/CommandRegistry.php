@@ -4,6 +4,9 @@ namespace App\Terminal;
 
 use App\Terminal\Commands\AboutCommand;
 use App\Terminal\Commands\ClearCommand;
+use App\Terminal\Commands\EasterEggs\CoffeeCommand;
+use App\Terminal\Commands\EasterEggs\EasterEggCommand;
+use App\Terminal\Commands\EasterEggs\FortyTwoCommand;
 use App\Terminal\Commands\EducationCommand;
 use App\Terminal\Commands\HelpCommand;
 use App\Terminal\Commands\ExperienceCommand;
@@ -31,6 +34,9 @@ class CommandRegistry
             ExperienceCommand::class,
             WelcomeCommand::class,
             LanguageCommand::class,
+            // Easter eggs
+            CoffeeCommand::class,
+            FortyTwoCommand::class,
         ]);
     }
 
@@ -50,12 +56,17 @@ class CommandRegistry
             }
 
             if ($name === 'help') {
-                return $this->commands['help']->executeWithCommands($this->commands);
+                $visibleCommands = array_filter(
+                    $this->commands,
+                    static fn($command) => !($command instanceof EasterEggCommand)
+                );
+
+                return $this->commands['help']->executeWithCommands($visibleCommands);
             }
 
             return $this->commands[$name]->execute($args);
         } catch (Throwable $e) {
-            return "<span class='text-[#ff5f56]'>Error: {$e->getMessage()}</span>";
+            return "<span class='text-ubuntu-red'>Error: {$e->getMessage()}</span>";
         }
     }
 
