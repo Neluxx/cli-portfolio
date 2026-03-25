@@ -44,13 +44,8 @@ RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs \
     && chown -R www-data:www-data storage bootstrap/cache database \
     && chmod -R 775 storage bootstrap/cache
 
-# Cache config/routes/views at build time (no runtime state needed)
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
-
 EXPOSE 9000
 
 USER www-data
 
-CMD ["sh", "-c", "touch database/database.sqlite && php artisan migrate --force && exec php-fpm"]
+CMD ["sh", "-c", "touch database/database.sqlite && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && exec php-fpm"]
