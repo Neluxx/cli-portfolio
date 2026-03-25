@@ -53,7 +53,4 @@ EXPOSE 9000
 
 USER www-data
 
-CMD ["sh", "-c", "\
-    touch database/database.sqlite && \
-    php artisan migrate --force && \
-    php-fpm"]
+CMD ["sh", "-c", "touch database/database.sqlite && php artisan migrate --force && exec php-fpm"]
