@@ -11,24 +11,23 @@ RUN npm run build
 
 
 # Stage 2: PHP application
-FROM php:8.4-fpm
+FROM php:8.4-fpm-alpine
 
-WORKDIR /app
+WORKDIR /var/www/html
 
 # Install system dependencies and PHP extensions
-RUN apt-get update && apt-get install -y \
+RUN apk add --no-cache \
         libzip-dev \
-        libsqlite3-dev \
+        sqlite-dev \
         unzip \
     && docker-php-ext-install \
         pdo \
         pdo_sqlite \
         zip \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/*
 
 # Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Copy application source
 COPY . .
@@ -36,16 +35,25 @@ COPY . .
 # Copy built frontend assets from node stage
 COPY --from=node_builder /app/public/build ./public/build
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+# Install PHP dependencies (production only)
+RUN composer install --no-dev --optimize-autoloader --no-interaction \
+    && rm /usr/bin/composer
 
-# Set correct permissions
-RUN chown -R www-data:www-data storage bootstrap/cache \
+# Create storage directories, set correct permissions
+RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs \
+    && chown -R www-data:www-data storage bootstrap/cache database \
     && chmod -R 775 storage bootstrap/cache
 
-# Copy and configure entrypoint
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+# Cache config/routes/views at build time (no runtime state needed)
+RUN php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["php-fpm"]
+EXPOSE 9000
+
+USER www-data
+
+CMD ["sh", "-c", "\
+    touch database/database.sqlite && \
+    php artisan migrate --force && \
+    php-fpm"]
