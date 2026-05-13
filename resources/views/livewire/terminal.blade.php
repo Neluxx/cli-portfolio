@@ -74,14 +74,11 @@
         if (input) input.focus();
     });
 
-    // Re-focus input after every Livewire DOM update (morphing can steal focus)
-    document.addEventListener('livewire:navigated', () => {
-        const input = document.querySelector('[x-ref="input"]');
-        if (input) input.focus();
-    });
-
-    Livewire.hook('morph.updated', () => {
-        const input = document.querySelector('[x-ref="input"]');
-        if (input) input.focus();
+    // Re-focus input after Livewire updates (morphing steals focus)
+    document.addEventListener('livewire:init', () => {
+        Livewire.hook('morph.updated', () => {
+            const input = document.querySelector('[x-ref="input"]');
+            if (input) input.focus();
+        });
     });
 </script>
