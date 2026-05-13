@@ -43,7 +43,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction \
 
 # Create storage directories, set correct permissions
 RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs \
-    && chown -R www-data:www-data storage bootstrap/cache database \
+    && chown -R www-data:www-data storage bootstrap/cache database public \
     && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 9000
