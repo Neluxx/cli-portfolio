@@ -105,6 +105,12 @@ docker compose up -d
 
 The app will be available on port **8080**. The stack includes a PHP-FPM application container and an Nginx reverse proxy.
 
+To rebuild and restart after code changes:
+
+```bash
+docker compose up -d --build
+```
+
 ---
 
 ## Running Tests
