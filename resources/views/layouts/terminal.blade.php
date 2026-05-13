@@ -11,13 +11,13 @@
 <div class="w-full h-screen flex flex-col">
     {{-- Window chrome --}}
     <div class="bg-chrome-bg rounded-t-lg px-4 py-3 flex items-center gap-2 border-b border-chrome-border shrink-0">
-        <span class="w-3 h-3 rounded-full bg-dot-red hover:brightness-110 cursor-pointer transition-all"></span>
-        <span class="w-3 h-3 rounded-full bg-dot-yellow hover:brightness-110 cursor-pointer transition-all"></span>
-        <span class="w-3 h-3 rounded-full bg-dot-green hover:brightness-110 cursor-pointer transition-all"></span>
+        <span id="btn-close" class="w-3 h-3 rounded-full bg-dot-red hover:brightness-110 cursor-pointer transition-all"></span>
+        <span id="btn-minimize" class="w-3 h-3 rounded-full bg-dot-yellow hover:brightness-110 cursor-pointer transition-all"></span>
+        <span id="btn-fullscreen" class="w-3 h-3 rounded-full bg-dot-green hover:brightness-110 cursor-pointer transition-all"></span>
     </div>
 
     {{-- Terminal body --}}
-    <div class="bg-ubuntu-bg rounded-b-lg border border-chrome-bg border-t-0 overflow-hidden flex-1">
+    <div id="terminal-body" class="bg-ubuntu-bg rounded-b-lg border border-chrome-bg border-t-0 overflow-hidden flex-1">
         {{ $slot }}
     </div>
 </div>
