@@ -14,7 +14,7 @@ find out who I am, what I have built, and how to get in touch.
 - **Tab autocomplete** — press Tab to complete a command
 - **Multi-language support** — switch language with the `lang` command
 - **Easter eggs** — hidden commands for the curious
-- **Docker ready** — Development (Laravel Sail) and production Docker setups included
+- **Docker ready** — Production Docker setup included
 ---
 
 ## Tech Stack
@@ -71,21 +71,11 @@ This will install all dependencies, set up the `.env` file, generate an applicat
 
 ## Running the Application
 
-### Option 1 — Composer dev script
-
 ```bash
 composer run dev
 ```
 
 This starts all services concurrently: the Laravel dev server, queue listener, log watcher, and the Vite HMR dev server. Open [http://localhost:8000](http://localhost:8000) in your browser.
-
-### Option 2 — Laravel Sail (Docker)
-
-```bash
-./vendor/bin/sail up
-```
-
-Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ---
 
