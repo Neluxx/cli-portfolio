@@ -36,6 +36,7 @@
             type="text"
             class="flex-1 bg-transparent outline-none break-all ml-1 text-ubuntu-white caret-ubuntu-white placeholder:text-ubuntu-purple"
             placeholder="type a command… (try 'help')"
+            autofocus
             autocomplete="off"
             autocorrect="off"
             autocapitalize="off"
@@ -69,6 +70,17 @@
 
     // Click anywhere on terminal → focus input
     document.addEventListener('click', () => {
+        const input = document.querySelector('[x-ref="input"]');
+        if (input) input.focus();
+    });
+
+    // Re-focus input after every Livewire DOM update (morphing can steal focus)
+    document.addEventListener('livewire:navigated', () => {
+        const input = document.querySelector('[x-ref="input"]');
+        if (input) input.focus();
+    });
+
+    Livewire.hook('morph.updated', () => {
         const input = document.querySelector('[x-ref="input"]');
         if (input) input.focus();
     });
