@@ -100,7 +100,7 @@ cp .env.prod.example .env
 Then start the production stack:
 
 ```bash
-docker compose -f compose.prod.yaml up -d
+docker compose up -d
 ```
 
 The app will be available on port **8080**. The stack includes a PHP-FPM application container and an Nginx reverse proxy.
