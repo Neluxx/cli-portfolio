@@ -49,6 +49,16 @@ class Terminal extends Component
         $this->input = '';
         $this->historyIndex = -1;
 
+        // If the user just changed the theme or CRT mode, push it to the
+        // browser so JS can re-skin live without a page reload.
+        $parts = explode(' ', trim($input), 2);
+        $cmd   = strtolower($parts[0]);
+        if ($cmd === 'theme') {
+            $this->dispatch('theme-changed', theme: session('theme', 'phosphor'));
+        } elseif ($cmd === 'crt') {
+            $this->dispatch('crt-changed', crt: session('crt', 'on'));
+        }
+
         $this->dispatch('scroll-to-bottom');
         $this->dispatch('focus-input');
     }

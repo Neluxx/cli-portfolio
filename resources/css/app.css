@@ -11,25 +11,345 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-ubuntu-mono: 'Ubuntu Mono', 'Courier New', monospace;
 
-    /* Ubuntu Terminal Colors */
-    --color-ubuntu-bg:       #300924; /* Terminal background */
-    --color-ubuntu-white:    #eeeeec; /* Default text color */
-    --color-ubuntu-green:    #8ae234; /* username@hostname */
-    --color-ubuntu-cyan:     #34e2e2; /* Commands */
-    --color-ubuntu-blue:     #729fcf; /* Links */
-    --color-ubuntu-yellow:   #fce94f; /* Title */
-    --color-ubuntu-red:      #ef2929; /* Error */
-    --color-ubuntu-purple:   #ad7fa8; /* Notes */
+    /* Ubuntu Terminal Colors — kept for backward-compat with command views */
+    --color-ubuntu-bg:       #0a1a0a;
+    --color-ubuntu-white:    #c8ffd0;
+    --color-ubuntu-green:    #39ff7a;
+    --color-ubuntu-cyan:     #5dffff;
+    --color-ubuntu-blue:     #7fd8ff;
+    --color-ubuntu-yellow:   #f4ff5a;
+    --color-ubuntu-red:      #ff5a5a;
+    --color-ubuntu-purple:   #b793ff;
 
     /* Window chrome colors */
-    --color-chrome-bg:     #2d2d2d; /* Window background */
-    --color-chrome-border: #3a3a3a; /* Window border */
-    --color-chrome-body:   #1a1a1a; /* Background */
-    --color-dot-red:       #ff5f56; /* Close */
-    --color-dot-yellow:    #ffbd2e; /* Minimize */
-    --color-dot-green:     #27c93f; /* Fullscreen */
+    --color-chrome-bg:     #050a05;
+    --color-chrome-border: #1a3a1a;
+    --color-chrome-body:   #000000;
+    --color-dot-red:       #ff5f56;
+    --color-dot-yellow:    #ffbd2e;
+    --color-dot-green:     #27c93f;
 }
 
+/* ============================================================
+   THEME SYSTEM
+   Themes override colors + the phosphor glow color.
+   data-theme is set on <html> and persisted via localStorage.
+   ============================================================ */
+
+html {
+    --bg:       #0a1a0a;
+    --fg:       #c8ffd0;
+    --green:    #39ff7a;
+    --cyan:     #5dffff;
+    --blue:     #7fd8ff;
+    --yellow:   #f4ff5a;
+    --red:      #ff5a5a;
+    --purple:   #b793ff;
+    --glow:     #39ff7a;
+    --glow-strong: 0 0 1px currentColor, 0 0 4px var(--glow), 0 0 10px color-mix(in srgb, var(--glow) 60%, transparent);
+    --glow-soft:   0 0 1px currentColor, 0 0 3px color-mix(in srgb, var(--glow) 70%, transparent);
+    --scanline-opacity: 0.18;
+    --vignette-opacity: 0.65;
+    --flicker-intensity: 0.04;
+}
+
+html[data-theme="amber"] {
+    --bg:       #1a0e00;
+    --fg:       #ffd58a;
+    --green:    #ffb347;
+    --cyan:     #ffd58a;
+    --blue:     #ffc77a;
+    --yellow:   #fff09a;
+    --red:      #ff6b3d;
+    --purple:   #ff8a5a;
+    --glow:     #ff9a3c;
+}
+
+html[data-theme="matrix"] {
+    --bg:       #000000;
+    --fg:       #00ff66;
+    --green:    #00ff41;
+    --cyan:     #66ff99;
+    --blue:     #99ffcc;
+    --yellow:   #ccff66;
+    --red:      #ff3333;
+    --purple:   #66ff66;
+    --glow:     #00ff41;
+    --scanline-opacity: 0.22;
+}
+
+html[data-theme="dracula"] {
+    --bg:       #1a0e2e;
+    --fg:       #f8f8f2;
+    --green:    #50fa7b;
+    --cyan:     #8be9fd;
+    --blue:     #6272a4;
+    --yellow:   #f1fa8c;
+    --red:      #ff5555;
+    --purple:   #bd93f9;
+    --glow:     #bd93f9;
+    --vignette-opacity: 0.55;
+}
+
+html[data-theme="ubuntu"] {
+    --bg:       #300924;
+    --fg:       #eeeeec;
+    --green:    #8ae234;
+    --cyan:     #34e2e2;
+    --blue:     #729fcf;
+    --yellow:   #fce94f;
+    --red:      #ef2929;
+    --purple:   #ad7fa8;
+    --glow:     #ad7fa8;
+    --scanline-opacity: 0.08;
+    --vignette-opacity: 0.35;
+    --flicker-intensity: 0.015;
+}
+
+/* Map theme tokens back to the named Tailwind utility colors so all existing
+   command views (text-ubuntu-green, etc.) re-skin automatically. */
+:root {
+    --color-ubuntu-bg:      var(--bg);
+    --color-ubuntu-white:   var(--fg);
+    --color-ubuntu-green:   var(--green);
+    --color-ubuntu-cyan:    var(--cyan);
+    --color-ubuntu-blue:    var(--blue);
+    --color-ubuntu-yellow:  var(--yellow);
+    --color-ubuntu-red:     var(--red);
+    --color-ubuntu-purple:  var(--purple);
+}
+
+/* ============================================================
+   PAGE / BODY — soft neutral desktop so the window has contrast
+   ============================================================ */
+body {
+    background:
+        radial-gradient(ellipse at top, #2a2a2e 0%, #181819 70%, #0f0f10 100%);
+    overflow: hidden;
+}
+
+/* ============================================================
+   CRT SCREEN — the glass surface holding the terminal
+   ============================================================ */
+.crt-screen {
+    position: relative;
+    background: var(--bg);
+    border-radius: 10px;
+    /* macOS drop shadow + hairline rim + phosphor halo that fades softly */
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 12px 24px rgba(0, 0, 0, 0.45),
+        0 30px 60px -10px rgba(0, 0, 0, 0.6),
+        0 0 12px color-mix(in srgb, var(--glow) 20%, transparent),
+        0 0 40px color-mix(in srgb, var(--glow) 12%, transparent),
+        0 0 90px color-mix(in srgb, var(--glow) 7%, transparent),
+        0 0 180px color-mix(in srgb, var(--glow) 4%, transparent),
+        0 0 320px color-mix(in srgb, var(--glow) 2%, transparent),
+        inset 0 0 60px color-mix(in srgb, var(--glow) 16%, transparent),
+        inset 0 0 180px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+    isolation: isolate;
+    animation: crt-flicker 6s infinite steps(1);
+}
+
+/* Scanlines — fine horizontal lines across the screen */
+.crt-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, var(--scanline-opacity)) 3px,
+        rgba(0, 0, 0, 0) 4px
+    );
+    pointer-events: none;
+    z-index: 30;
+    mix-blend-mode: multiply;
+}
+
+/* Vignette + slow rolling scanline */
+.crt-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center,
+            transparent 55%,
+            rgba(0, 0, 0, var(--vignette-opacity)) 100%),
+        linear-gradient(to bottom,
+            transparent 0%,
+            color-mix(in srgb, var(--glow) 8%, transparent) 50%,
+            transparent 100%);
+    background-size: 100% 100%, 100% 6px;
+    background-repeat: no-repeat, repeat-y;
+    pointer-events: none;
+    z-index: 31;
+    animation: crt-roll 7s linear infinite;
+}
+
+/* Slow brightness flicker — old CRT instability */
+@keyframes crt-flicker {
+    0%, 92%, 100% { filter: brightness(1); }
+    93% { filter: brightness(calc(1 - var(--flicker-intensity))); }
+    94% { filter: brightness(calc(1 + var(--flicker-intensity) * 0.6)); }
+    95% { filter: brightness(calc(1 - var(--flicker-intensity) * 0.3)); }
+    96% { filter: brightness(1); }
+}
+
+/* Rolling scanline (slow horizontal sweep) */
+@keyframes crt-roll {
+    0%   { background-position: 0 0, 0 -200px; }
+    100% { background-position: 0 0, 0 100vh; }
+}
+
+/* Bezel wrapper — no frame, just a transparent layout container */
+.crt-bezel {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ============================================================
+   WINDOW CHROME (Mac-style traffic lights)
+   ============================================================ */
+.window-chrome {
+    position: relative;
+    z-index: 40;
+    background: color-mix(in srgb, var(--bg) 65%, #000);
+    border-bottom: 1px solid color-mix(in srgb, var(--glow) 25%, transparent);
+    backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   TERMINAL TEXT — phosphor glow on everything inside the screen
+   ============================================================ */
+.crt-screen .terminal-text,
+.crt-screen #terminal-output {
+    text-shadow: var(--glow-soft);
+    color: var(--fg);
+}
+
+.crt-screen .terminal-text *,
+.crt-screen #terminal-output * {
+    text-shadow: inherit;
+}
+
+/* Stronger glow on bold elements (prompt, headings) */
+.crt-screen .prompt,
+.crt-screen .font-bold {
+    text-shadow: var(--glow-strong);
+}
+
+/* Blinking cursor on the live input */
+.crt-cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    background: var(--glow);
+    box-shadow: 0 0 8px var(--glow);
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: cursor-blink 1.05s steps(2) infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Hide the actual caret — the .crt-cursor overlay handles it */
+.crt-screen input[type="text"] {
+    caret-color: transparent;
+}
+
+/* ============================================================
+   OUTPUT REVEAL ANIMATION — left-to-right print
+   ============================================================ */
+.terminal-output-block {
+    animation: print-reveal 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes print-reveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+        filter: brightness(1.4);
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(1.4);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+/* ============================================================
+   BOOT SEQUENCE
+   ============================================================ */
+.boot-line {
+    opacity: 0;
+    animation: boot-fade-in 0.12s ease-out forwards;
+}
+
+@keyframes boot-fade-in {
+    from { opacity: 0; transform: translateY(-2px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.boot-ok    { color: var(--green); text-shadow: var(--glow-strong); }
+.boot-warn  { color: var(--yellow); }
+.boot-info  { color: var(--cyan); }
+.boot-dim   { color: color-mix(in srgb, var(--fg) 55%, transparent); }
+
+/* ============================================================
+   STATUS BAR
+   ============================================================ */
+.status-bar {
+    background: color-mix(in srgb, var(--bg) 70%, #000);
+    border-top: 1px solid color-mix(in srgb, var(--glow) 25%, transparent);
+    color: var(--fg);
+    font-family: var(--font-ubuntu-mono);
+    font-size: 11px;
+    text-shadow: var(--glow-soft);
+    backdrop-filter: blur(8px);
+    z-index: 40;
+}
+
+.status-segment {
+    padding: 2px 10px;
+    border-right: 1px solid color-mix(in srgb, var(--glow) 18%, transparent);
+}
+
+.status-segment:last-child {
+    border-right: none;
+}
+
+.status-bar .led {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 4px var(--green);
+    margin-right: 4px;
+    animation: led-pulse 1.6s ease-in-out infinite;
+    vertical-align: middle;
+}
+
+@keyframes led-pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.35; }
+}
+
+/* ============================================================
+   MINIMIZE TRANSITION
+   ============================================================ */
 #terminal-body {
     transition: height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
@@ -39,4 +359,56 @@
     height: 0 !important;
     opacity: 0;
     flex: 0 0 0;
+}
+
+/* ============================================================
+   CRT OFF — `crt off` command disables all the CRT-specific
+   effects (scanlines, vignette, flicker, phosphor glow) while
+   keeping the colors and reveal animations intact.
+   ============================================================ */
+html[data-crt="off"] .crt-screen {
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 12px 24px rgba(0, 0, 0, 0.45),
+        0 30px 60px -10px rgba(0, 0, 0, 0.6);
+    animation: none;
+}
+html[data-crt="off"] .crt-screen::before,
+html[data-crt="off"] .crt-screen::after {
+    display: none;
+}
+html[data-crt="off"] .crt-screen .terminal-text,
+html[data-crt="off"] .crt-screen #terminal-output,
+html[data-crt="off"] .crt-screen .terminal-text *,
+html[data-crt="off"] .crt-screen #terminal-output *,
+html[data-crt="off"] .crt-screen .prompt,
+html[data-crt="off"] .crt-screen .font-bold,
+html[data-crt="off"] .status-bar,
+html[data-crt="off"] #boot-sequence,
+html[data-crt="off"] .boot-ok {
+    text-shadow: none !important;
+}
+html[data-crt="off"] .crt-cursor {
+    box-shadow: none;
+}
+html[data-crt="off"] .status-bar .led {
+    box-shadow: none;
+    animation: none;
+}
+
+/* ============================================================
+   REDUCED MOTION — disable flicker / roll / blink for users who
+   prefer it
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .crt-screen,
+    .crt-screen::after,
+    .crt-cursor,
+    .status-bar .led,
+    .terminal-output-block,
+    .boot-line {
+        animation: none !important;
+    }
+    .terminal-output-block { clip-path: none; opacity: 1; filter: none; }
+    .boot-line { opacity: 1; }
 }
