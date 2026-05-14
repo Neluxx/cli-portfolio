@@ -18,6 +18,22 @@ return [
     'lang_toggled'       => 'Sprache gewechselt zu: <span class="text-ubuntu-yellow">:locale</span>',
     'lang_not_available' => 'Sprache "<span class="text-ubuntu-yellow">:locale</span>" ist nicht verfügbar. Verfügbare Sprachen: :available',
 
+    // Theme command
+    'theme_intro'        => 'Verfügbare Themes — tippe <span class="text-ubuntu-yellow">theme &lt;name&gt;</span> zum Wechseln:',
+    'theme_hint'         => 'Deine Auswahl wird in diesem Browser gespeichert.',
+    'theme_applied'      => 'Theme gewechselt zu <span class="text-ubuntu-yellow">:theme</span>',
+    'theme_unknown'      => 'Unbekanntes Theme "<span class="text-ubuntu-yellow">:theme</span>" — verfügbar: :available',
+    'theme_desc_phosphor' => 'Klassisches grünes CRT-Phosphor (Standard)',
+    'theme_desc_amber'    => 'Vintage Amber-Monochrom-Monitor',
+    'theme_desc_matrix'   => 'Hypergesättigtes Digital-Rain-Grün',
+    'theme_desc_dracula'  => 'Lila Dunst, schonend für die Augen',
+    'theme_desc_ubuntu'   => 'Der originale lila Ubuntu-Look',
+
+    // CRT command
+    'crt_enabled'  => 'CRT-Effekt <span class="text-ubuntu-green">aktiviert</span> — Scanlines, Glow & Flackern sind zurück',
+    'crt_disabled' => 'CRT-Effekt <span class="text-ubuntu-yellow">deaktiviert</span> — sauberer Lesemodus',
+    'crt_usage'    => 'Verwendung: <span class="text-ubuntu-yellow">crt</span> [on|off|toggle]',
+
     // Command descriptions
     'cmd_help'       => 'Nicht sicher, wo du anfangen sollst?',
     'cmd_about'      => 'Lern mich kennen',
@@ -29,6 +45,8 @@ return [
     'cmd_experience' => 'Meine Berufserfahrung',
     'cmd_welcome'    => 'Zurück zum Anfang',
     'cmd_lang'       => 'Sprache wechseln (z. B. lang en)',
+    'cmd_theme'      => 'Farbtheme wechseln (z. B. theme matrix)',
+    'cmd_crt'        => 'CRT-Effekt umschalten (z. B. crt off)',
 
     // About
     'about_title'  => 'Über mich',
