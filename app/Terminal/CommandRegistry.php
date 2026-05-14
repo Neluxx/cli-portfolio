@@ -4,6 +4,7 @@ namespace App\Terminal;
 
 use App\Terminal\Commands\AboutCommand;
 use App\Terminal\Commands\ClearCommand;
+use App\Terminal\Commands\CrtCommand;
 use App\Terminal\Commands\EasterEggs\CoffeeCommand;
 use App\Terminal\Commands\EasterEggs\EasterEggCommand;
 use App\Terminal\Commands\EasterEggs\FortyTwoCommand;
@@ -14,6 +15,7 @@ use App\Terminal\Commands\LanguageCommand;
 use App\Terminal\Commands\ProjectsCommand;
 use App\Terminal\Commands\SkillsCommand;
 use App\Terminal\Commands\SocialsCommand;
+use App\Terminal\Commands\ThemeCommand;
 use App\Terminal\Commands\WelcomeCommand;
 use Throwable;
 
@@ -34,6 +36,8 @@ class CommandRegistry
             ExperienceCommand::class,
             WelcomeCommand::class,
             LanguageCommand::class,
+            ThemeCommand::class,
+            CrtCommand::class,
             // Easter eggs
             CoffeeCommand::class,
             FortyTwoCommand::class,
