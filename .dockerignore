@@ -9,7 +9,7 @@ node_modules/
 
 # Compiled front-end assets
 public/build/
-public/hot/
+public/hot
 
 # Version control
 .git/

@@ -77,4 +77,18 @@
             }
         }
     }
+
+    // Click anywhere on terminal → focus input
+    document.addEventListener('click', () => {
+        const input = document.querySelector('[x-ref="input"]');
+        if (input) input.focus();
+    });
+
+    // Re-focus input after Livewire updates (morphing steals focus)
+    document.addEventListener('livewire:init', () => {
+        Livewire.hook('morph.updated', () => {
+            const input = document.querySelector('[x-ref="input"]');
+            if (input) input.focus();
+        });
+    });
 </script>
