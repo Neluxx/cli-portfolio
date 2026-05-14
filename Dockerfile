@@ -32,9 +32,13 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Copy application source
 COPY . .
 
+# Entrypoint script
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # Copy built frontend assets from node stage to a staging dir
 # (the actual public/ dir is a shared volume that persists between deploys,
-#  so we sync fresh assets into it at container startup via CMD)
+#  so we sync fresh assets into it at container startup via the entrypoint)
 COPY --from=node_builder /app/public/build /tmp/public-build
 
 # Install PHP dependencies (production only)
@@ -50,4 +54,4 @@ EXPOSE 9000
 
 USER www-data
 
-CMD ["sh", "-c", "cp -r /tmp/public-build public/build && touch database/database.sqlite && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && exec php-fpm"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

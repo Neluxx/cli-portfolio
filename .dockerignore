@@ -18,6 +18,8 @@ public/hot/
 
 # Docker files
 docker/
+!docker/entrypoint.sh
+!docker/nginx.conf
 compose*.yaml
 .dockerignore
 
