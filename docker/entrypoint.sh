@@ -22,8 +22,12 @@ if [ -z "${APP_KEY:-}" ]; then
     exit 1
 fi
 
-# Create SQLite DB
-touch database/database.sqlite
+# Create SQLite DB in the mounted app-database volume.
+# The volume may be fresh, so ensure dir + file exist and are www-data-owned
+# (SQLite also needs the parent dir writable for -journal / -wal files).
+mkdir -p database/data
+touch database/data/database.sqlite
+chown -R www-data:www-data database/data
 
 # Cache config / routes / views / events for production
 php artisan config:cache

@@ -27,6 +27,10 @@
 /storage/logs/*
 /bootstrap/cache/*.php
 
+# Local SQLite DB (persisted via app-database volume in production)
+/database/*.sqlite
+/database/data
+
 # IDE / editor
 .idea
 .vscode
