@@ -22,6 +22,12 @@ if [ -z "${APP_KEY:-}" ]; then
     exit 1
 fi
 
+# Refuse to run with APP_DEBUG=true in production (leaks stack traces + env).
+if [ "${APP_ENV:-}" = "production" ] && [ "${APP_DEBUG:-false}" = "true" ]; then
+    echo "ERROR: APP_DEBUG must be false when APP_ENV=production" >&2
+    exit 1
+fi
+
 # Create SQLite DB in the mounted app-database volume.
 # The volume may be fresh, so ensure dir + file exist and are www-data-owned
 # (SQLite also needs the parent dir writable for -journal / -wal files).
