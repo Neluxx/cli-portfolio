@@ -18,6 +18,9 @@
 /public/storage
 
 # Laravel runtime
+/database/*.sqlite
+/database/*.sqlite-journal
+/database/data
 /storage/*.key
 /storage/app/*
 /storage/framework/cache/*
@@ -26,10 +29,6 @@
 /storage/framework/views/*
 /storage/logs/*
 /bootstrap/cache/*.php
-
-# Local SQLite DB (persisted via app-database volume in production)
-/database/*.sqlite
-/database/data
 
 # IDE / editor
 .idea
