@@ -55,7 +55,7 @@ return [
     'about_footer' => 'I love clean code, open-source, and a good cup of coffee ☕',
 
     // Education
-    'education_title'              => 'Where I learned my craft',
+    'education_title'              => 'How I got here',
     'education_degree'             => 'B.Sc. Media Informatics',
     'education_university'         => 'Furtwangen University · Sep 2017 – Mar 2021',
     'education_thesis_label'       => "Bachelor's Thesis:",

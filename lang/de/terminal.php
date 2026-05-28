@@ -55,7 +55,7 @@ return [
     'about_footer' => 'Ich mag sauberen Code, Open-Source und eine gute Tasse Kaffee ☕',
 
     // Education
-    'education_title'              => 'Wo ich mein Handwerk gelernt habe',
+    'education_title'              => 'Wie ich hierher gekommen bin',
     'education_degree'             => 'B.Sc. Medieninformatik',
     'education_university'         => 'Hochschule Furtwangen · Sep 2017 – Mär 2021',
     'education_thesis_label'       => 'Bachelorarbeit:',
