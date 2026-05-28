@@ -1,13 +1,6 @@
 <?php ?>
 <div class="relative h-full w-full">
 
-    {{-- Boot sequence overlay (removed by JS once done; skipped on subsequent navigations within session) --}}
-    <div
-        id="boot-sequence"
-        class="absolute inset-0 z-10 font-ubuntu-mono text-sm p-4 overflow-y-auto"
-        style="color: var(--fg);"
-    ></div>
-
     {{-- Terminal app --}}
     <div
         id="terminal-app"

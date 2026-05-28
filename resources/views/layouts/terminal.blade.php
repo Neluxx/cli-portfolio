@@ -21,7 +21,12 @@
             </div>
 
             {{-- Terminal body --}}
-            <div id="terminal-body" class="flex-1 min-h-0 overflow-hidden">
+            <div id="terminal-body" class="relative flex-1 min-h-0 overflow-hidden">
+                <div
+                    id="boot-sequence"
+                    class="absolute inset-0 z-10 font-ubuntu-mono text-sm p-4 overflow-y-auto"
+                    style="color: var(--fg);"
+                ></div>
                 {{ $slot }}
             </div>
 
