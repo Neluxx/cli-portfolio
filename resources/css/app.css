@@ -48,9 +48,9 @@ html {
     --glow:     #39ff7a;
     --glow-strong: 0 0 1px currentColor, 0 0 4px var(--glow), 0 0 10px color-mix(in srgb, var(--glow) 60%, transparent);
     --glow-soft:   0 0 1px currentColor, 0 0 3px color-mix(in srgb, var(--glow) 70%, transparent);
-    --scanline-opacity: 0.18;
-    --vignette-opacity: 0.65;
-    --flicker-intensity: 0.04;
+    --scanline-opacity: 0.2;
+    --vignette-opacity: 0.4;
+    --flicker-intensity: 0.1;
 }
 
 html[data-theme="amber"] {
@@ -75,7 +75,6 @@ html[data-theme="matrix"] {
     --red:      #ff3333;
     --purple:   #66ff66;
     --glow:     #00ff41;
-    --scanline-opacity: 0.22;
 }
 
 html[data-theme="dracula"] {
@@ -88,7 +87,6 @@ html[data-theme="dracula"] {
     --red:      #ff5555;
     --purple:   #bd93f9;
     --glow:     #bd93f9;
-    --vignette-opacity: 0.55;
 }
 
 html[data-theme="ubuntu"] {
@@ -101,9 +99,6 @@ html[data-theme="ubuntu"] {
     --red:      #ef2929;
     --purple:   #ad7fa8;
     --glow:     #ad7fa8;
-    --scanline-opacity: 0.08;
-    --vignette-opacity: 0.35;
-    --flicker-intensity: 0.015;
 }
 
 /* Map theme tokens back to the named Tailwind utility colors so all existing
