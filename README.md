@@ -21,7 +21,7 @@ find out who I am, what I have built, and how to get in touch.
 
 | Layer      | Technology                 |
 |------------|----------------------------|
-| Backend    | PHP 8.2, Laravel 12        |
+| Backend    | PHP 8.4, Laravel 12        |
 | Frontend   | Livewire 4, Tailwind CSS 4 |
 | Database   | SQLite                     |
 | Build Tool | Vite 7                     |
