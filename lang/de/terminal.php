@@ -30,8 +30,8 @@ return [
     'theme_desc_ubuntu'   => 'Der originale lila Ubuntu-Look',
 
     // CRT command
-    'crt_enabled'  => 'CRT-Effekt <span class="text-ubuntu-green">aktiviert</span> — Scanlines, Glow & Flackern sind zurück',
-    'crt_disabled' => 'CRT-Effekt <span class="text-ubuntu-yellow">deaktiviert</span> — sauberer Lesemodus',
+    'crt_enabled'  => 'CRT-Effekt <span class="text-ubuntu-green">aktiviert</span> — Scanlines, Glow und Flackern aktiv',
+    'crt_disabled' => 'CRT-Effekt <span class="text-ubuntu-yellow">deaktiviert</span> — sauberer Lesemodus aktiviert',
     'crt_usage'    => 'Verwendung: <span class="text-ubuntu-yellow">crt</span> [on|off|toggle]',
 
     // Command descriptions
@@ -75,12 +75,12 @@ return [
         [
             'title'       => 'Softwareentwickler',
             'company'     => 'ORCA Services AG · Aug 2021 – Heute',
-            'description' => 'Entwicklung und Implementierung innovativer Webanwendungen in verschiedenen Branchen',
+            'description' => 'Konzeption und Entwicklung von Webanwendungen für Kunden aus verschiedenen Branchen',
         ],
         [
             'title'       => 'Junior Webentwickler',
             'company'     => 'Wackenhut GmbH & Co. KG · Mai 2021 – Jul 2021',
-            'description' => 'Entwicklung von Full-Stack Webanwendungen mit PHP und React',
+            'description' => 'Entwicklung von Full-Stack-Webanwendungen mit PHP und React',
         ],
         [
             'title'       => 'Wissenschaftlicher Mitarbeiter',
@@ -90,7 +90,7 @@ return [
         [
             'title'       => 'Praktikum Webentwicklung',
             'company'     => 'Agentur teufels · Sep 2018 – Mär 2019',
-            'description' => 'Umsetzung dynamischer Webprojekte mit TYPO3',
+            'description' => 'Umsetzung dynamischer Websites mit dem CMS TYPO3',
         ],
     ],
 
@@ -108,7 +108,7 @@ return [
     'projects_list'  => [
         [
             'name'        => 'CLI Portfolio',
-            'description' => 'Ein persönliches Portfolio als interaktives browserbasiertes Terminal, betrieben mit Laravel und Livewire',
+            'description' => 'Mein persönliches Portfolio als interaktives, browserbasiertes Terminal mit Laravel und Livewire',
             'url'         => 'github.com/neluxx/cli-portfolio',
             'href'        => 'https://github.com/neluxx/cli-portfolio',
         ],
@@ -120,7 +120,7 @@ return [
         ],
         [
             'name'        => 'Enviro Node',
-            'description' => 'Ein Sensorknoten für den Raspberry Pi, entwickelt mit Python Django',
+            'description' => 'Ein Sensorknoten für den Raspberry Pi, entwickelt mit Python und Django',
             'url'         => 'github.com/neluxx/enviro-node-django',
             'href'        => 'https://github.com/neluxx/enviro-node-django',
         ],

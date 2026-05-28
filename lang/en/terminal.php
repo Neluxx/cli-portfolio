@@ -30,8 +30,8 @@ return [
     'theme_desc_ubuntu'   => 'The original purple Ubuntu look',
 
     // CRT command
-    'crt_enabled'  => 'CRT effect <span class="text-ubuntu-green">enabled</span> — scanlines, glow & flicker are back',
-    'crt_disabled' => 'CRT effect <span class="text-ubuntu-yellow">disabled</span> — clean reading mode',
+    'crt_enabled'  => 'CRT effect <span class="text-ubuntu-green">enabled</span> — scanlines, glow and flicker active',
+    'crt_disabled' => 'CRT effect <span class="text-ubuntu-yellow">disabled</span> — switched to clean reading mode',
     'crt_usage'    => 'Usage: <span class="text-ubuntu-yellow">crt</span> [on|off|toggle]',
 
     // Command descriptions
@@ -43,6 +43,7 @@ return [
     'cmd_socials'    => 'Find me online',
     'cmd_projects'   => 'Projects I have worked on',
     'cmd_experience' => 'My work experience',
+    'cmd_welcome'    => 'Back to the start',
     'cmd_lang'       => 'Switch language (e.g. lang en)',
     'cmd_theme'      => 'Switch color theme (e.g. theme matrix)',
     'cmd_crt'        => 'Toggle the CRT effect (e.g. crt off)',
@@ -74,22 +75,22 @@ return [
         [
             'title'       => 'Software developer',
             'company'     => 'ORCA Services AG · Aug 2021 – Present',
-            'description' => 'Developed and implemented innovative web applications across various industries',
+            'description' => 'Designing and building web applications for clients across various industries',
         ],
         [
             'title'       => 'Junior web developer',
             'company'     => 'Wackenhut GmbH & Co. KG · May 2021 – Jul 2021',
-            'description' => 'Developed full-stack web applications with PHP and React',
+            'description' => 'Built full-stack web applications with PHP and React',
         ],
         [
             'title'       => 'Research assistant',
             'company'     => 'Fraunhofer IOSB · Aug 2020 – Apr 2021',
-            'description' => 'Collaborated to develop a web-based annotation tool using Python and Django',
+            'description' => 'Helped build a web-based annotation tool with Python and Django',
         ],
         [
             'title'       => 'Internship in web development',
             'company'     => 'Agency teufels · Sep 2018 – Mar 2019',
-            'description' => 'Implemented dynamic web projects using TYPO3',
+            'description' => 'Built dynamic websites with the TYPO3 CMS',
         ],
     ],
 
@@ -107,7 +108,7 @@ return [
     'projects_list'  => [
         [
             'name'        => 'CLI Portfolio',
-            'description' => 'A personal portfolio built as an interactive browser-based terminal, powered by Laravel and Livewire',
+            'description' => 'My personal portfolio, built as an interactive browser-based terminal with Laravel and Livewire',
             'url'         => 'github.com/neluxx/cli-portfolio',
             'href'        => 'https://github.com/neluxx/cli-portfolio',
         ],
@@ -119,7 +120,7 @@ return [
         ],
         [
             'name'        => 'Enviro Node',
-            'description' => 'A sensor node developed with Python Django for the Raspberry Pi',
+            'description' => 'A Raspberry Pi sensor node built with Python and Django',
             'url'         => 'github.com/neluxx/enviro-node-django',
             'href'        => 'https://github.com/neluxx/enviro-node-django',
         ],
