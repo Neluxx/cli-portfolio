@@ -49,13 +49,13 @@ return [
     'cmd_crt'        => 'Toggle the CRT effect (e.g. crt off)',
 
     // About
-    'about_title'  => 'About Me',
+    'about_title'  => 'Let me introduce myself!',
     'about_intro'  => 'Hey, my name is Fabian. I am a full-stack software developer from Germany.',
     'about_body'   => 'I began my career with an apprenticeship in media design, which introduced me to web development and motivated me to pursue a degree in computer science. Since graduating, I have focused on software development, driven by curiosity and a commitment to continuously expand my knowledge of emerging technologies.',
     'about_footer' => 'I love clean code, open-source, and a good cup of coffee ☕',
 
     // Education
-    'education_title'              => 'Education',
+    'education_title'              => 'Where I learned my craft',
     'education_degree'             => 'B.Sc. Media Informatics',
     'education_university'         => 'Furtwangen University · Sep 2017 – Mar 2021',
     'education_thesis_label'       => "Bachelor's Thesis:",
@@ -70,7 +70,7 @@ return [
     ],
 
     // Experience
-    'experience_title' => 'Work Experience',
+    'experience_title' => 'Where I\'ve worked so far',
     'experience_jobs'  => [
         [
             'title'       => 'Software developer',
@@ -95,16 +95,16 @@ return [
     ],
 
     // Skills
-    'skills_title'      => 'Skills',
+    'skills_title'      => 'Here\'s what I work with',
     'skills_languages'  => 'Languages',
     'skills_frameworks' => 'Frameworks',
     'skills_tools'      => 'Tools',
 
     // Socials
-    'socials_title' => 'Socials',
+    'socials_title' => 'Get in touch with me!',
 
     // Projects
-    'projects_title' => 'Projects',
+    'projects_title' => 'Some things I\'ve built',
     'projects_list'  => [
         [
             'name'        => 'CLI Portfolio',
@@ -123,6 +123,12 @@ return [
             'description' => 'A Raspberry Pi sensor node built with Python and Django',
             'url'         => 'github.com/neluxx/enviro-node-django',
             'href'        => 'https://github.com/neluxx/enviro-node-django',
+        ],
+        [
+            'name'        => 'Minecraft Datapacks',
+            'description' => 'A collection of Minecraft datapacks focused on custom world generation',
+            'url'         => 'github.com/Neluxx?tab=repositories&q=minecraft',
+            'href'        => 'https://github.com/Neluxx?tab=repositories&q=minecraft',
         ],
     ],
 ];

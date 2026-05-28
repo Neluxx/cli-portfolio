@@ -49,13 +49,13 @@ return [
     'cmd_crt'        => 'CRT-Effekt umschalten (z. B. crt off)',
 
     // About
-    'about_title'  => 'Über mich',
+    'about_title'  => 'Darf ich mich vorstellen?',
     'about_intro'  => 'Hey, ich bin Fabian – ein Full-Stack Softwareentwickler aus Deutschland.',
     'about_body'   => 'Meine Karriere begann mit einer Ausbildung zum Mediengestalter, die mich zur Webentwicklung brachte und mich dazu motivierte, Informatik zu studieren. Seitdem konzentriere ich mich auf Softwareentwicklung – angetrieben von Neugier und dem Wunsch, mein Wissen über neue Technologien stetig zu erweitern.',
     'about_footer' => 'Ich mag sauberen Code, Open-Source und eine gute Tasse Kaffee ☕',
 
     // Education
-    'education_title'              => 'Bildung',
+    'education_title'              => 'Wo ich mein Handwerk gelernt habe',
     'education_degree'             => 'B.Sc. Medieninformatik',
     'education_university'         => 'Hochschule Furtwangen · Sep 2017 – Mär 2021',
     'education_thesis_label'       => 'Bachelorarbeit:',
@@ -70,7 +70,7 @@ return [
     ],
 
     // Experience
-    'experience_title' => 'Berufserfahrung',
+    'experience_title' => 'Wo ich bisher gearbeitet habe',
     'experience_jobs'  => [
         [
             'title'       => 'Softwareentwickler',
@@ -95,16 +95,16 @@ return [
     ],
 
     // Skills
-    'skills_title'      => 'Fähigkeiten',
+    'skills_title'      => 'Damit arbeite ich',
     'skills_languages'  => 'Sprachen',
     'skills_frameworks' => 'Frameworks',
     'skills_tools'      => 'Werkzeuge',
 
     // Socials
-    'socials_title' => 'Soziale Medien',
+    'socials_title' => 'Melde dich bei mir!',
 
     // Projects
-    'projects_title' => 'Projekte',
+    'projects_title' => 'Ein paar meiner Projekte',
     'projects_list'  => [
         [
             'name'        => 'CLI Portfolio',
@@ -114,15 +114,21 @@ return [
         ],
         [
             'name'        => 'Enviro Hub',
-            'description' => 'Symfony-basierte API zum Speichern, Verarbeiten und Alarmieren auf Basis von Umgebungssensordaten verteilter Knoten',
+            'description' => 'Symfony-basierte API, die Umweltsensordaten von verteilten Nodes speichert, verarbeitet und bei kritischen Werten Alarme auslöst',
             'url'         => 'github.com/neluxx/enviro-hub-symfony',
             'href'        => 'https://github.com/neluxx/enviro-hub-symfony',
         ],
         [
             'name'        => 'Enviro Node',
-            'description' => 'Ein Sensorknoten für den Raspberry Pi, entwickelt mit Python und Django',
+            'description' => 'Ein mit Python und Django entwickelter Sensor-Node für den Raspberry Pi',
             'url'         => 'github.com/neluxx/enviro-node-django',
             'href'        => 'https://github.com/neluxx/enviro-node-django',
+        ],
+        [
+            'name'        => 'Minecraft Datapacks',
+            'description' => 'Eine Sammlung von Minecraft-Datapacks mit Schwerpunkt auf eigener Weltgenerierung',
+            'url'         => 'github.com/Neluxx?tab=repositories&q=minecraft',
+            'href'        => 'https://github.com/Neluxx?tab=repositories&q=minecraft',
         ],
     ],
 ];
