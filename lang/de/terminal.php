@@ -50,8 +50,8 @@ return [
 
     // About
     'about_title'  => 'Darf ich mich vorstellen?',
-    'about_intro'  => 'Hey, ich bin Fabian – ein Full-Stack Softwareentwickler aus Deutschland.',
-    'about_body'   => 'Meine Karriere begann mit einer Ausbildung zum Mediengestalter, die mich zur Webentwicklung brachte und mich dazu motivierte, Informatik zu studieren. Seitdem konzentriere ich mich auf Softwareentwicklung – angetrieben von Neugier und dem Wunsch, mein Wissen über neue Technologien stetig zu erweitern.',
+    'about_intro'  => 'Hey, ich bin Fabian. Ich bin ein Full-Stack-Softwareentwickler aus Deutschland, dessen Leidenschaft darin besteht, Dinge im Web zu entwickeln, zu Open-Source-Projekten beizutragen und mit neuen Technologien zu experimentieren. Ursprünglich komme ich aus dem Bereich Mediendesign, was mein Interesse an der Entwicklung geweckt und mich schließlich zur Informatik geführt hat.',
+    'about_body'   => 'Wenn ich nicht gerade an Software arbeite, erstelle ich meist Minecraft-Datapacks oder bastele an Nebenprojekten herum.',
     'about_footer' => 'Ich mag sauberen Code, Open-Source und eine gute Tasse Kaffee ☕',
 
     // Education
