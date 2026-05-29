@@ -50,8 +50,8 @@ return [
 
     // About
     'about_title'  => 'Let me introduce myself!',
-    'about_intro'  => 'Hey, my name is Fabian. I am a full-stack software developer from Germany.',
-    'about_body'   => 'I began my career with an apprenticeship in media design, which introduced me to web development and motivated me to pursue a degree in computer science. Since graduating, I have focused on software development, driven by curiosity and a commitment to continuously expand my knowledge of emerging technologies.',
+    'about_intro'  => 'Hey, my name is Fabian. I’m a full-stack software developer from Germany with a passion for building things on the web, contributing to open source, and experimenting with new technologies. I originally came from a media design background, which sparked my interest in development and eventually led me into computer science.',
+    'about_body'   => 'When I’m not working on software, I’m usually creating Minecraft datapacks or tinkering with side projects.',
     'about_footer' => 'I love clean code, open-source, and a good cup of coffee ☕',
 
     // Education
