@@ -114,15 +114,15 @@ return [
         ],
         [
             'name'        => 'Enviro Hub',
-            'description' => 'Symfony-based API for storing, processing, and alerting based on environmental sensor data from distributed nodes',
-            'url'         => 'github.com/neluxx/enviro-hub-symfony',
-            'href'        => 'https://github.com/neluxx/enviro-hub-symfony',
+            'description' => 'Laravel-based API for storing, processing, and alerting based on environmental sensor data from distributed nodes',
+            'url'         => 'github.com/neluxx/enviro-hub',
+            'href'        => 'https://github.com/neluxx/enviro-hub',
         ],
         [
             'name'        => 'Enviro Node',
-            'description' => 'A Raspberry Pi sensor node built with Python and Django',
-            'url'         => 'github.com/neluxx/enviro-node-django',
-            'href'        => 'https://github.com/neluxx/enviro-node-django',
+            'description' => 'A Raspberry Pi sensor node built with Python',
+            'url'         => 'github.com/neluxx/enviro-node',
+            'href'        => 'https://github.com/neluxx/enviro-node',
         ],
         [
             'name'        => 'Minecraft Datapacks',
