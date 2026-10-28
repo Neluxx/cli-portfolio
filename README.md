@@ -5,6 +5,12 @@ Instead of scrolling through a static page, you interact with it through a termi
 Type commands to
 find out who I am, what I have built, and how to get in touch.
 
+> [!IMPORTANT]
+> **This project has been archived.**  
+> Development continues in a new repository: [Neluxx/neluxx.github.io](https://github.com/Neluxx/neluxx.github.io).  
+> The project was archived due to a switch from **Laravel** to a static site  
+> built with **HTML**, **CSS** and **JavaScript**, deployed via **GitHub Pages**.
+
 ---
 
 ## Features
